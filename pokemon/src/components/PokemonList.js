@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import Cards from './Cards'
-import { useQuery, } from '@apollo/client'
+import PokemonListCards from './PokemonListCards'
+import { useQuery } from '@apollo/client'
 import { LOAD_POKEMON } from '../GraphQL/Queries'
 
-export default function Content() {
-    const { error, loading, data } = useQuery(LOAD_POKEMON)
+export default function Pokemon() {
+    const { data } = useQuery(LOAD_POKEMON)
 
     const [pokemonList, setPokemonList] = useState([])
 
@@ -15,11 +15,17 @@ export default function Content() {
         }
     }, [data])
 
+    
+
     return (
         <div className=''>
+            <div className='text-sm mb-5 font-bold'>
+                <p>What Pokemon are you</p>
+                <p>looking for?</p>
+            </div>
             <div className='mt-5 grid md:grid-cols-3 lg:grid-cols-3 gap-3'>
                 {pokemonList.map((list) => {
-                    return <Cards key={list.id} list={list} />
+                    return <PokemonListCards key={list.id} list={list} />
                 })}
             </div>
         </div>
