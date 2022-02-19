@@ -9,6 +9,9 @@ import {
   InMemoryCache,
   ApolloProvider,
 } from "@apollo/client";
+import { Provider } from 'react-redux'
+import { PersistGate } from 'redux-persist/integration/react';
+import {store, persistor} from './redux/store';
 
 const client = new ApolloClient({
   uri: 'https://graphql-pokeapi.graphcdn.app/',
@@ -19,7 +22,11 @@ const client = new ApolloClient({
 ReactDOM.render(
   <BrowserRouter>
     <ApolloProvider client={client}>
-      <Router />
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <Router />
+        </PersistGate>
+      </Provider>
     </ApolloProvider>
   </BrowserRouter>,
   document.getElementById('root')

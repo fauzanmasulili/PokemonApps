@@ -21,7 +21,7 @@ function App() {
       <SideBar toggle={toggle} onClick={sideBarToggle} />
       <div className='flex-1 px-5 py-2'>
         <PokemonContextProvider>
-          <Outlet />
+            <Outlet />
         </PokemonContextProvider>
       </div>
     </div>

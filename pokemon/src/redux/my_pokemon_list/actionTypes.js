@@ -1,0 +1,2 @@
+export const ADD_MY_POKEMON = "ADD_MY_POKEMON"
+export const RELEASE_MY_POKEMON = "RELEASE_MY_POKEMON"
