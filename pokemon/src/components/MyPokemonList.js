@@ -53,7 +53,7 @@ const MyPokemonList = ({ releaseMyPokemon, myPokemonList }) => {
                                 </div>
                             </div>
                             <div className="mt-5 text-center">
-                                <button onClick={() => realesePokemon(list.id)} className="rounded-xl bg-red-600 w-full p-2 text-white">Release Pokemon</button>
+                                <button onClick={() => realesePokemon(index)} className="rounded-xl bg-red-600 w-full p-2 text-white">Release Pokemon</button>
                             </div>
                         </div>
                     </div>

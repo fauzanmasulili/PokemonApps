@@ -14,7 +14,7 @@ const myPokemonListReducer = (state = initialState, action) => {
         case RELEASE_MY_POKEMON: 
             return {
                 ...state,
-                myPokemonList: state.myPokemonList.filter(item => item.id !== action.payload)
+                myPokemonList: state.myPokemonList.filter((_, index) => index !== action.payload)
             }
         default:
             return state;
